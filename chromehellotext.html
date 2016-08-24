@@ -126,6 +126,13 @@ function sessionUpdateListener(isAlive) {
  */
 function receiverMessage(namespace, message) {
   appendMessage("receiverMessage: "+namespace+", "+message);
+
+  data = JSON.parse(message);
+
+  if (data.artist) {
+    document.getElementById("artist").innerHTML=data.artist;
+    document.getElementById("song").innerHTML=data.song;
+  }
 };
 
 /**
@@ -191,6 +198,8 @@ function transcribe(words) {
 </script>
 </head>
 <body>
+  <h2 id="artist"></h2>
+  <h2 id="song"></h2> 
   <table id="wrapper">
 	<tr>
 		<td>

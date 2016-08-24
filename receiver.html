@@ -102,7 +102,7 @@ limitations under the License.
         document.getElementById("artist").innerHTML=artist;
         document.getElementById("song").innerHTML=song;
 
-        window.messageBus.broadcast("{\"artist\":" + artist + ", \"song\":" + song + "}");
+        window.messageBus.broadcast("{\"artist\": \"" + artist + "\", \"song\": \"" + song + "\"}");
       };
     </script>
   </body>
