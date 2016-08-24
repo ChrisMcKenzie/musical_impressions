@@ -43,6 +43,33 @@ input {
     border-color: #8ecaed;
     box-shadow: 0 0 5px #8ecaed;
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.selection {
+  font-size: 32px;
+  height: 32px;
+}
+
+.selection #artist, .selection #song {
+  margin: 20px;
+}
 </style>
 <script type="text/javascript" src="//www.gstatic.com/cv/js/sender/v1/cast_sender.js"></script>
 <script type="text/javascript">
@@ -198,17 +225,18 @@ function transcribe(words) {
 </script>
 </head>
 <body>
-  <h2 id="artist"></h2>
-  <h2 id="song"></h2> 
-  <table id="wrapper">
-	<tr>
-		<td>
-			<form method="get" action="JavaScript:update();">
+  <div class="container">
+    <div class="row selection">
+      <div id="artist"></div>
+      <div id="song"></div> 
+    </div>
+
+    <div>
+      <form method="get" action="JavaScript:update();">
         <input type="submit" value="Push Me">
-			</form>
-		</td>
-	</tr>
-  </table>	
+      </form>
+    </div>
+  </div>
 
   <!-- Debbugging output -->
   <div style="margin:10px; visibility:hidden;">
